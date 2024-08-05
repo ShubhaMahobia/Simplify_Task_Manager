@@ -20,7 +20,7 @@ const taskSchema = new mongoose.Schema({
         min:6,
         default: false
     },
-    taskPriority:{
+    isImportant:{
         type:Boolean,
         required:true,
         max:255,
