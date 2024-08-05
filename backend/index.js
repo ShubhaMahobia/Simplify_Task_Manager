@@ -3,8 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
-const userApi = require("./routes/user");
-const taskApi = require("./routes/task");
+const apiRoutes = require("./routes/apiRoutes");
 var app = express();
 const port = 8080;
 app.listen(port, function () {
@@ -18,5 +17,4 @@ mongoose
   .then(() => console.log("Database connected"))
   .catch((err) => console.log("Mongo Connection Error " + err));
 
-app.use("/api", userApi);
-app.use("/api/task", taskApi);
+app.use("/server/api", apiRoutes);

@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 
 //Sign Up - Proccess
-router.post('/signup', async (req, res) => {
+exports.signup = async (req, res) => {
     try {
      const { userName, email, password } = req.body;
     //Here we are checking if the user has entered all the fields
@@ -45,10 +45,10 @@ router.post('/signup', async (req, res) => {
         console.log(error);
         return res.status(500).json({success: false,error: "Internal Server Error"});
     }
-});
+};
 
 //Login - Proccess
-router.post('/login', async (req, res) => {
+exports.login = async (req, res) => {
     try {
         const { userName, password } = req.body;
         //Here we are checking if the user has entered all the fields
@@ -76,6 +76,4 @@ router.post('/login', async (req, res) => {
         console.log(error);
         return res.status(500).json({success: false,error: "Internal Server Error"});
     }
-});
-
-module.exports = router;
+};
