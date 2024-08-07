@@ -3,14 +3,15 @@ import { BsListTask } from "react-icons/bs";
 import { IoMdDoneAll } from "react-icons/io";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { FcLike } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 
 function Sidebar() {
   const data = [
-    { title: "All Tasks",icons:<BsListTask/> },
-    { title: "Completed Task" ,icons:<IoMdDoneAll/>},
-    { title: "Incomplete Task",icons:<MdOutlinePendingActions/> },
-    { title: "Important Task" ,icons:<FcLike/>}
+    { title: "All Tasks",icons:<BsListTask/> ,path:'/'},
+    { title: "Completed Task" ,icons:<IoMdDoneAll/>,path:'/completedTask' },
+    { title: "Incomplete Task",icons:<MdOutlinePendingActions/>,path:'/incompTask' },
+    { title: "Important Task" ,icons:<FcLike/>,path:'/impTask' },
   ];
 
   return (
@@ -22,9 +23,9 @@ function Sidebar() {
       </div>
       <div>
         {data.map((item, i) => (
-          <div className='m-4 py-2 text-[3vh] flex items-center gap-2 hover:bg-gray-600 transition-all rounded duration-300 px-1' key={i}>
+          <Link to={item.path} className='m-4 py-2 text-[3vh] flex items-center gap-2 hover:bg-gray-600 transition-all rounded duration-300 px-1' key={i}>
            {item.icons} {item.title}
-          </div>
+          </Link>
         ))}
       </div>
       <div>
