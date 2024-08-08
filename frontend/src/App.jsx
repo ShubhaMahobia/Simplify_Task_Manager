@@ -6,6 +6,8 @@ import CompletedTask from './pages/CompletedTask';
 import IncompleteTask from './pages/IncompleteTask';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import AllTask from './pages/AllTask';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
   return(
@@ -18,6 +20,8 @@ function App() {
       <Route path='/completedTask' element={<CompletedTask/>} />
       <Route path='/incompTask' element={<IncompleteTask/>} />
       </Route>
+      <Route path='/signup' element={<Signup/>} ></Route>
+      <Route path='/login' element={<Login/>} ></Route>
     </Routes>
   </Router>   
 </div>

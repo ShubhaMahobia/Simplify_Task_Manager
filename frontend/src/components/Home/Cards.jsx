@@ -5,7 +5,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { IoIosAddCircle } from "react-icons/io";
 
 
-function Cards({ home }) {
+function Cards({ home, setInputDiv }) {
     const data = [
         { taskname: 'Task 1', description: 'lorem wadiojawpdkawp jwdiajwdipawjdwa awdiawjpdowajd wajdipawjpdjaw',status: 'Incomplete' },
         { taskname: 'Task 2', description: 'Description 2',status: 'Incomplete' },
@@ -29,10 +29,10 @@ return (
             </div>
         ))}
         {home === true && (
-            <div className='rounded-md p-4 flex-col flex justify-center items-center text-2xl bg-gray-700 mb-4 hover:scale-105 hover:cursor-pointer transition-all duration-300'>
+            <button onClick={()=> setInputDiv('show')} className='rounded-md p-4 flex-col flex justify-center items-center text-2xl bg-gray-700 mb-4 hover:scale-105 hover:cursor-pointer transition-all duration-300'>
                 <IoIosAddCircle size={30}/>
                 <h1>Add More</h1> 
-            </div>
+            </button>
         )}
     </div>
 )
