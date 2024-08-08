@@ -9,7 +9,7 @@ import AllTask from './pages/AllTask';
 
 function App() {
   return(
-<div className='h-screen w-full bg-gray-900 text-white p-2'>
+<div className='h-screen w-full bg-gray-900 text-white p-2 relative'>
   <Router>
     <Routes>
       <Route exact path='/' element={<Home/>}>
