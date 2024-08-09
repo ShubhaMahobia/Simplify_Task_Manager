@@ -4,9 +4,18 @@ import { IoMdDoneAll } from "react-icons/io";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { FcLike } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/auth';
 
 
 function Sidebar() {
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch(authActions.logout());
+    localStorage.clear("id");
+    localStorage.clear("token");
+    window.location.reload();
+  };
   const data = [
     { title: "All Tasks",icons:<BsListTask/> ,path:'/'},
     { title: "Completed Task" ,icons:<IoMdDoneAll/>,path:'/completedTask' },
@@ -29,7 +38,7 @@ function Sidebar() {
         ))}
       </div>
       <div>
-        <button className='bg-gray-600 w-full p-2 rounded'>Logout</button>
+        <button onClick={logout} className='bg-gray-600 w-full p-2 rounded'>Logout</button>
       </div>
     </>
   )

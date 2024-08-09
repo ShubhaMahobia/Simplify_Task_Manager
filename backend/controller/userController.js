@@ -49,6 +49,7 @@ exports.signup = async (req, res) => {
 
 //Login - Proccess
 exports.login = async (req, res) => {
+    console.log(req.body);
     try {
         const { userName, password } = req.body;
         //Here we are checking if the user has entered all the fields
